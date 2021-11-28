@@ -1,10 +1,9 @@
 from flask import Flask, render_template
 from dotenv import load_dotenv
-import dbaccess as db
+import data_access as db
 
 load_dotenv()
 app = Flask(__name__)
-
 
 @app.route("/")
 def index():
@@ -12,11 +11,6 @@ def index():
     return render_template(
         'index.html',
         data={'xs': xs, 'ys': ys, 'data_source': db.DATA_SOURCE})
-
-
-@app.route("/api/earthquakes")
-def earthquakes():
-    return "it works!"
 
 if __name__ == "__main__":
     app.run()
