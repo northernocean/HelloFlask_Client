@@ -7,8 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Plot</title>
   <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <script src="{{ url_for('static', filename='js/plotly.min.css') }}"></script>
+  <script src="{{ url_for('static', filename='js/d3.min.css') }}"></script>
   <style>
     #data-source {
       margin-left: 70px;
