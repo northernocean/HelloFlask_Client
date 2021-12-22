@@ -1,5 +1,4 @@
 import requests
-import json
 
 DATA_SOURCE = "hidden stream api"
 base_url = "https://hidden-stream-21468.herokuapp.com/"
