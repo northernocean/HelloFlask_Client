@@ -8,8 +8,6 @@
   <title>Plot</title>
   <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/> -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-  <script src="{{ url_for('static', filename='js/plotly.min.css') }}"></script>
-  <script src="{{ url_for('static', filename='js/d3.min.css') }}"></script>
   <style>
     #data-source {
       margin-left: 70px;
@@ -22,6 +20,9 @@
     <div id="plot"></div>
     <h6 id="data-source">data connected to: {{ data.data_source }}</h6>
 </body>
+
+<script src="{{ url_for('static', filename='js/plotly.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/d3.min.js') }}"></script>
 
 <!-- Load static plot functions -->
 <script src="{{ url_for('static', filename='js/plot.js') }}"></script>
