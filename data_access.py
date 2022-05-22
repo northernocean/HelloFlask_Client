@@ -10,7 +10,6 @@ def get_earthquake_count_by_years():
     resource = "api/earthquakes"
     res = requests.get(base_url + resource)
     if res.status_code == 200:
-        print(res.json())
         dict_temp = res.json()
         xs = dict_temp["xs"]
         ys = dict_temp["ys"]

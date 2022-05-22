@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import data_access as db
 
@@ -7,10 +7,29 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    return render_template('index.html')
+
+@app.route('/chart')
+def chart():
     xs, ys = db.get_earthquake_count_by_years()
     return render_template(
-        'index.html',
+        'chart.html',
         data={'xs': xs, 'ys': ys, 'data_source': db.DATA_SOURCE})
+
+
+
+@app.route("/buttons", methods=['GET','POST'])
+def buttons():
+    if request.method == 'POST':
+        print(request.form.get('name'))
+        data = {'message': request.form.get('name')}
+        return render_template(
+            'buttons.html',
+            data=data)
+    if request.method == 'GET':
+        return render_template(
+            'buttons.html',
+            data=None)
 
 if __name__ == "__main__":
     app.run()

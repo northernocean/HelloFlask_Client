@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Plot</title>
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/> -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
   <style>
     #data-source {
       margin-left: 70px;
@@ -16,25 +16,26 @@
 </head>
 
 <body>
-  <div class="container w-50">
-    <div id="plot"></div>
-    <h6 id="data-source">data connected to: {{ data.data_source }}</h6>
+  <div class="container mt-5 w-50">
+    <div class="row">
+        <ul class="list-group">
+            <li class="list-group-item">
+              <div class="m-1">
+                <a href="/chart">Earthquake Data</a>
+                <span class="badge rounded-pill bg-info ms-3" style="min-width: 120px">Chart</span>
+              </div>
+              <p>Sample chart that calls out to an API for Json data</p>
+            </li>
+            <li class="list-group-item">
+              <div class="m-1">
+                <a href="/buttons">Data Entry</a>
+                <span class="badge rounded-pill bg-info ms-3" style="min-width: 120px">Interactive User Form</span>
+              </div>
+              <p>Using a standard HTML form for posting user-entered data to the server</p>
+            </li>
+        </ul>
+    </div>
+  </div>
 </body>
-
-<script src="{{ url_for('static', filename='js/plotly.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/d3.min.js') }}"></script>
-
-<!-- Load static plot functions -->
-<script src="{{ url_for('static', filename='js/plot.js') }}"></script>
-
-<!--  Create javascript variable to reference to data from flask app -->
-<script type="text/javascript">
-  let data = '{{ data|tojson }}';
-</script>
-
-<!-- Go create charts -->
-<script type="text/javascript">
-  createPlot(data);
-</script>
 
 </html>
