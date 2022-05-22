@@ -29,9 +29,9 @@
     {% if data %}
     
       {% if data.message %}
-        <h1>Hi, {{ data.message }}!</h1>
+        <h1>You entered: {{ data.message }}</h1>
       {% else %}
-        <h1>You did not enter a name. That's okay - welcome anyway!</h1>
+        <h1>You entered: Nothing</h1>
       {% endif %}
       
     <!-- 
@@ -53,16 +53,10 @@
     
     {% else %}
     
-      <!-- an html form -->
-      <form method="post" action="/hello">
-        
-        <!-- textbox -->
+      <form method="post" action="/buttons">
         <label for="name">Enter your name:</label>
         <input type="text" name="name" class="m-2"></input>
-        
-        <!-- Submit (OK, Enter, Post) button -->
-        <button type="submit" class="d-block">Submit</input>
-      
+        <button type="submit" class="d-block">submit</input>
       </form>
     
     {% endif %}

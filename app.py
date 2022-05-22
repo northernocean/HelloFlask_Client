@@ -18,17 +18,17 @@ def chart():
 
 
 
-@app.route("/hello", methods=['GET','POST'])
-def hello():
+@app.route("/buttons", methods=['GET','POST'])
+def buttons():
     if request.method == 'POST':
         print(request.form.get('name'))
         data = {'message': request.form.get('name')}
         return render_template(
-            'hello.html',
+            'buttons.html',
             data=data)
     if request.method == 'GET':
         return render_template(
-            'hello.html',
+            'buttons.html',
             data=None)
 
 if __name__ == "__main__":
